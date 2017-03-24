@@ -11,7 +11,7 @@
 <dom-module id="very-cool-element">
   <template>
     <style>
-      :host {
+       :host {
         display: block;
       }
     </style>
@@ -19,7 +19,17 @@
     <h3>Your input: [[prop]]</h3>
 
     <another-very-cool-element on-custom-event="_handleCustomEvent"></another-very-cool-element>
-    
+
+    <h3>All feedback [[feedback.length]]</h3>
+
+   
+    <ul>
+      <template is="dom-repeat" items="[[feedback]]" as="item">
+        <li>[[item]]</li>
+      </template>
+    </ul>
+
+
   </template>
 
   <script src="very-cool-element.js"></script>

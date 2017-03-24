@@ -4,12 +4,18 @@ class VeryCoolElement extends Polymer.Element {
     return {
       prop: {
         type: String
+      },
+
+      feedback: {
+        type: Array,
+        value: []
       }
     }
   }
 
   _handleCustomEvent(e) {
     this.prop = e.detail;
+    this.push('feedback', e.detail);
   }
 }
 
