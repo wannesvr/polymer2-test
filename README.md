@@ -1,4 +1,4 @@
-# \<very-cool-element\>
+# Checking out Polymer 2
 
 
 
