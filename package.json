@@ -1,0 +1,23 @@
+{
+  "name": "poly-2",
+  "version": "1.0.0",
+  "description": "Test for Polymer 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "polymer serve -o",
+    "test": "wct -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wannesvr/polymer2-test.git"
+  },
+  "keywords": [
+    "Polymer2",
+    "test"
+  ],
+  "author": "wannesvr",
+  "bugs": {
+    "url": "https://github.com/wannesvr/polymer2-test/issues"
+  },
+  "homepage": "https://github.com/wannesvr/polymer2-test#readme"
+}

@@ -1,0 +1,41 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../paper-input/paper-input.html">
+<link rel="import" href="../../paper-button/paper-button.html">
+
+<dom-module id="another-very-cool-element">
+    <template>
+        <style>
+             :host {
+                display: block;
+            }
+        </style>
+
+        <paper-input label="Your feedback" value="{{value}}"></paper-input>
+
+        <paper-button on-tap="_dispatchFeedbackEvent" raised>Send</paper-button>
+
+    </template>
+
+    <script>
+        class AnotherVeryCoolElement extends Polymer.Element {
+            static get is() { return 'another-very-cool-element'; }
+
+            static get properties() {
+                return {
+                    value: {
+                        type: String
+                    }
+                };
+            }
+
+
+            _dispatchFeedbackEvent() {
+                if (this.value) {
+                    this.dispatchEvent(new CustomEvent('custom-event', {detail: this.value}));
+                }
+            }
+        }
+
+        window.customElements.define(AnotherVeryCoolElement.is, AnotherVeryCoolElement);
+    </script>
+</dom-module>

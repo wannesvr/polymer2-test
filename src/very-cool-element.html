@@ -1,0 +1,26 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="another-very-cool-element.html">
+
+<!--
+`very-cool-element`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="very-cool-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <h3>Your input: [[prop]]</h3>
+
+    <another-very-cool-element on-custom-event="_handleCustomEvent"></another-very-cool-element>
+    
+  </template>
+
+  <script src="very-cool-element.js"></script>
+</dom-module>

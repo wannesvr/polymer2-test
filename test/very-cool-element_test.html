@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>very-cool-element test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../src/very-cool-element.html">
+  </head>
+  <body>
+    <test-fixture id="fixture">
+      <template>
+        <very-cool-element></very-cool-element>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('very-cool-element', function() {
+        test('instantiating the element works', function() {
+          var element = fixture('fixture');
+          assert.equal(element.is, 'very-cool-element');
+        });
+
+        test('should set prop when a custom-event is received', function() {
+          var element = fixture('fixture');
+          var event = {detail: 'test'}
+
+          assert.equal(element.prop, undefined);
+          element._handleCustomEvent(event);
+          assert.equal(element.prop, 'test');
+        });
+      });
+    </script>
+  </body>
+</html>
